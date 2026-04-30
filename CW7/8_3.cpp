@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+void inputMatrix(double a[25][25], int m, int n) {
+    cout << "Vvedit elementy matrytsi:" << endl;
+
+    for (int i = 0; i < m; i++) {
+        cout << "Ryadok " << i + 1 << ": ";
+        for (int j = 0; j < n; j++) {
+            cin >> a[i][j];
+        }
+    }
+}
+
+void printMatrix(double a[25][25], int m, int n) {
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << a[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    int m, n;
+    double a[25][25];
+
+    cout << "Vvedit m ta n: ";
+    cin >> m >> n;
+
+    if (m <= 0 || m >= 25 || n <= 0 || n >= 25) {
+        cout << "Pomylka: m i n mayut buty menshe 25" << endl;
+        return 0;
+    }
+
+    inputMatrix(a, m, n);
+
+    cout << "Otrymana matrytsia:" << endl;
+    printMatrix(a, m, n);
+
+    return 0;
+}
